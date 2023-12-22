@@ -133,7 +133,8 @@ function createCheckboxes() {
     container.style.justifyContent = 'space-evenly';
     
     // Loop through the drivers
-    driver_in_order = ctx.drivers.sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+    driver_in_order = ctx.drivers.slice()
+    driver_in_order = driver_in_order.sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
     driver_in_order.forEach(function (driver) {
 
       // Create checkbox div with Bootstrap form-check class
